@@ -2,6 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -9,14 +10,18 @@ static const char *fonts[]          = { "Iosevka Nerd Font-9" };
 static const char dmenufont[]       = "monospace-8";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
+static const char col_gray3[]       = "#777777";
+static const char col_gray4[]       = "#bbbbbb";
+static const char col_gray5[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
-static const char col_plum[]        = "#52154e";
+static const char col_black[]       = "#000000";
+static const char col_red[]         = "#9b1e1c";
+static const char col_blue[]         = "#008080";
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_plum  },
+	/*               fg          bg         border   */
+	[SchemeNorm]  = { col_gray4, col_black, col_gray2 },
+	[SchemeSel]   = { col_red,   col_black, col_gray4 },
+	[SchemeTitle] = { col_gray3, col_black, col_black },
 };
 
 /* tagging */
@@ -35,7 +40,7 @@ static const Rule rules[] = {
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 static const Layout layouts[] = {
@@ -134,4 +139,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
